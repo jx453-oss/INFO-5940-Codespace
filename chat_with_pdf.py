@@ -125,10 +125,10 @@ if uploaded_files:
 
             status.update(label="Documents processed successfully", state="complete")
 
-        # Reset chat history
-        st.session_state["messages"] = [
-            {"role": "assistant", "content": f"Loaded {len(uploaded_files)} document(s). You can ask questions now!"}
-        ]
+        # Add notification to chat history instead of resetting it
+        st.session_state["messages"].append(
+            {"role": "assistant", "content": f"Loaded {len(uploaded_files)} document(s). You can continue asking questions!"}
+        )
 
 # Display uploaded files
 if st.session_state["uploaded_files_names"]:
