@@ -9,7 +9,7 @@ from langchain_core.documents import Document
 
 # Initialize OpenAI client
 client = OpenAI(
-    api_key="sk-2gKXW6iepBgSh9wLTHr35w",
+    api_key="api",
     base_url="https://api.ai.it.cornell.edu",
 )
 
