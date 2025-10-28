@@ -137,6 +137,11 @@ if st.session_state["uploaded_files_names"]:
     for name in st.session_state["uploaded_files_names"]:
         st.sidebar.write(f"- {name}")
 
+    # Add new chat button
+    if st.sidebar.button("New Chat", use_container_width=True):
+        st.session_state["messages"] = []
+        st.rerun()
+
 # Chat interface
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
